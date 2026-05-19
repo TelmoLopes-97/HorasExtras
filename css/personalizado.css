@@ -1,0 +1,802 @@
+:root{
+    --active-menu-bg: #E3F2FD;
+    --active-menu-color: #1E88E5; 
+}
+
+.user-area{
+    display: flex;
+    flex-flow: column wrap;
+    margin:0;
+    height: 175px;   
+    border-bottom:1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.user-area img{
+    border:1px solid #eee;
+    margin-top:20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.user-area strong{
+    width: 100%;
+    font-size:20px;
+    margin-top: 20px;
+    white-space: nowrap;                  
+    overflow: hidden;
+    text-overflow:    ellipsis;
+}
+
+.user-mail{
+    justify-content: flex-start;
+    color: gray;
+    width: 100%;    
+    white-space: nowrap;                  
+    overflow: hidden;
+    text-overflow:    ellipsis;
+}
+
+.user-mail::after{  
+    line-height: 24px;
+    position: absolute;  
+    content:"\25BC";
+    right: 10px;
+    font-size: 8px;
+    color:gray;
+}
+
+.item-panel{
+    width: 95%;
+    margin: auto;  
+}
+
+.item-panel.active{    
+    background: var(--active-menu-bg);
+    color: var(--active-menu-color);
+    font-weight: bolder; 
+    border-radius:5px;  
+}
+
+.item-panel.active .item-title{
+    font-weight: bold;
+}
+
+.item-media svg{
+    width: 22px;
+    height: 22px;
+}
+
+/* ========== Página Horas — tema azul escuro (tons equilibrados topo/fundo) ========== */
+.page-horas {
+    --horas-bg: #1e293b;
+    --horas-bg-soft: #243248;
+    --horas-card: #2a3954;
+    --horas-stat-card-bg: #334a6a;
+    --horas-card-border: rgba(148, 163, 184, 0.18);
+    --horas-blue: #3b82f6;
+    --horas-blue-soft: #2563eb;
+    --horas-muted: #94a3b8;
+    --horas-orange: #f59e0b;
+    --horas-orange-deep: #d97706;
+    --horas-input-bg: rgba(15, 23, 42, 0.35);
+    background: var(--horas-bg);
+}
+
+.page-horas .page-content {
+    background: linear-gradient(180deg, var(--horas-bg-soft) 0%, var(--horas-bg) 45%, var(--horas-bg) 100%);
+}
+
+.page-horas .navbar-horas {
+    --f7-navbar-bg-color: rgba(36, 50, 72, 0.96);
+}
+
+.page-horas .navbar-horas .navbar-bg {
+    background: var(--horas-bg-soft) !important;
+    backdrop-filter: blur(10px);
+}
+
+.page-horas .navbar-horas .navbar-inner {
+    color: #fff;
+}
+
+.page-horas .navbar-horas .title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.page-horas .navbar-horas .link {
+    color: #fff;
+}
+
+.page-horas .navbar-horas .link .mdi {
+    font-size: 24px;
+}
+
+.horas-page-content {
+    padding-top: calc(var(--f7-navbar-height) + 12px) !important;
+    padding-bottom: 24px;
+}
+
+.page-horas .horas-page-content .block-title.horas-field-label {
+    color: var(--horas-muted);
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 6px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.page-horas .horas-field-label--in-card {
+    margin-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 10px;
+}
+
+.page-horas .horas-field-label--manual {
+    margin-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 8px;
+    line-height: 1.35;
+}
+
+.page-horas .horas-card {
+    background: var(--horas-card) !important;
+    border: 1px solid var(--horas-card-border);
+    border-radius: 14px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+}
+
+.page-horas .horas-card-month {
+    background: var(--horas-stat-card-bg) !important;
+    padding: 14px 14px 12px;
+    margin-top: 10px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+}
+
+.horas-month-shell {
+    background: rgba(15, 23, 42, 0.22);
+    border: 1px solid var(--horas-card-border);
+    border-radius: 12px;
+    padding: 6px 4px;
+}
+
+.page-horas .horas-stats-grid.block {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+.horas-stats-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.horas-stat-card {
+    flex: 1 1 0;
+    min-width: 0;
+    background: var(--horas-stat-card-bg);
+    border: 1px solid var(--horas-card-border);
+    border-radius: 14px;
+    padding: 14px 8px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.horas-stat-card .horas-stat-label {
+    margin-bottom: 8px;
+}
+
+.horas-stat-card .horas-stat-value {
+    font-size: 1.2rem;
+}
+
+.horas-stat-saldo.saldo-positive {
+    color: var(--horas-blue);
+}
+
+.horas-stat-saldo.saldo-negative {
+    color: var(--horas-orange);
+}
+
+.horas-stat-saldo.saldo-zero {
+    color: var(--horas-muted);
+}
+
+.horas-month-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.horas-chevron {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--horas-muted);
+    padding: 4px 8px;
+    border-radius: 8px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.horas-chevron .mdi {
+    font-size: 22px;
+}
+
+.horas-chevron:active {
+    background: rgba(59, 130, 246, 0.15);
+    color: #fff;
+}
+
+.horas-mes-select {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    color: #e2e8f0 !important;
+    background-color: transparent !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='%23cbd5e1'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding: 10px 32px 10px 12px !important;
+    border: none;
+    border-radius: 8px;
+}
+
+.horas-mes-select option {
+    color: #0f172a;
+    background: #fff;
+}
+
+.horas-stat-label {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    color: var(--horas-muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.horas-stat-value {
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.horas-stat-positive {
+    color: var(--horas-blue);
+}
+
+.horas-stat-negative {
+    color: var(--horas-orange);
+}
+
+.horas-date-row.block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    position: relative;
+}
+
+.horas-date-native {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    border: 0;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.horas-field-label-inline {
+    color: var(--horas-muted);
+    font-size: 13px;
+    font-weight: 500;
+    flex-shrink: 0;
+    max-width: 46%;
+}
+
+.horas-date-combo {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.horas-date-display {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 48px 12px 14px !important;
+    color: #e2e8f0 !important;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    cursor: pointer;
+    pointer-events: auto;
+    background: var(--horas-input-bg) !important;
+}
+
+.horas-date-cal-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    background: transparent;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    padding: 0;
+}
+
+.horas-date-cal-btn .mdi {
+    font-size: 22px;
+    pointer-events: none;
+}
+
+.horas-date-cal-btn:active {
+    color: #fff;
+    background: rgba(59, 130, 246, 0.15);
+}
+
+.horas-card-resumo {
+    padding: 4px 14px 8px;
+    min-height: 56px;
+}
+
+.horas-resumo-empty {
+    margin: 0;
+    padding: 16px 8px;
+    text-align: center;
+    color: var(--horas-muted);
+    font-size: 14px;
+}
+
+.horas-resumo-empty.is-hidden {
+    display: none;
+}
+
+.horas-resumo-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.horas-resumo-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 4px;
+    border-bottom: 1px solid var(--horas-card-border);
+    font-size: 15px;
+}
+
+.horas-resumo-left {
+    flex: 1 1 auto;
+    min-width: 0;
+    line-height: 1.4;
+}
+
+.horas-resumo-line {
+    display: block;
+}
+
+.horas-resumo-obs {
+    color: #cbd5e1;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.horas-resumo-sep {
+    color: var(--horas-muted);
+    font-weight: 400;
+    margin: 0 1px;
+}
+
+.horas-resumo-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.horas-resumo-delete {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    background: #ef4444;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+}
+
+.horas-resumo-delete .mdi {
+    font-size: 18px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.horas-resumo-delete:active {
+    filter: brightness(0.92);
+}
+
+.horas-resumo-item:last-child {
+    border-bottom: none;
+}
+
+.horas-resumo-date {
+    color: #fff;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.horas-resumo-hours {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.horas-resumo-hours.is-pos {
+    color: var(--horas-blue);
+}
+
+.horas-resumo-hours.is-neg {
+    color: var(--horas-orange);
+}
+
+.horas-quick-grid {
+    margin-top: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.horas-quick-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 8px;
+}
+
+.horas-quick-row + .horas-quick-row {
+    margin-top: 8px;
+}
+
+.horas-quick-row .horas-btn {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.horas-btn {
+    width: 100%;
+    border-radius: 10px !important;
+    font-weight: 600;
+    font-size: 13px;
+    min-height: 40px;
+    line-height: 1.2;
+    border: none !important;
+    margin: 0;
+}
+
+.horas-btn-plus {
+    background: var(--horas-blue) !important;
+    color: #fff !important;
+}
+
+.horas-btn-plus:active {
+    background: var(--horas-blue-soft) !important;
+}
+
+.horas-btn-minus {
+    background: var(--horas-orange) !important;
+    color: #fff !important;
+}
+
+.horas-btn-minus:active {
+    background: var(--horas-orange-deep) !important;
+}
+
+.horas-card-manual {
+    padding: 14px;
+}
+
+.horas-manual-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.horas-square-plus {
+    flex-shrink: 0;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px;
+    padding: 0 !important;
+    border-radius: 10px !important;
+    background: var(--horas-blue) !important;
+    color: #fff !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border: none !important;
+}
+
+.horas-square-plus.is-falta-mode {
+    background: var(--horas-orange) !important;
+}
+
+.horas-square-plus.is-falta-mode:active {
+    background: var(--horas-orange-deep) !important;
+}
+
+.horas-input {
+    appearance: none;
+    border: 1px solid var(--horas-card-border);
+    border-radius: 10px;
+    background: var(--horas-input-bg);
+    color: #fff;
+    font-size: 15px;
+    padding: 12px 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.horas-input::placeholder {
+    color: var(--horas-muted);
+}
+
+.horas-input-hours {
+    flex: 1 1 0;
+    min-width: 0;
+    width: 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.horas-input-hours[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.horas-input-hours[type='number']::-webkit-outer-spin-button,
+.horas-input-hours[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.horas-input-full {
+    width: 100%;
+    display: block;
+}
+
+/* Sem button-fill: evita largura 100% do F7 que empurrava o texto para fora (ex.: “Cadastre-se” truncado) */
+.page-horas .horas-btn-registar.button {
+    flex: 0 0 auto;
+    width: auto !important;
+    min-width: min-content;
+    white-space: nowrap;
+    border-radius: 10px !important;
+    background: var(--horas-blue) !important;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 0 14px !important;
+    height: 44px;
+    line-height: 44px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.page-horas .horas-btn-registar:active {
+    background: var(--horas-blue-soft) !important;
+}
+
+/* Framework7: blocos fortes/inset no tema escuro da página Horas */
+.page-horas .horas-page-content .block-strong {
+    color: #fff;
+}
+
+.page-horas .horas-page-content .block.inset {
+    background: transparent;
+}
+
+.dialog {
+    background: #2d4a6e !important;
+    border-radius: 16px !important;
+}
+
+.dialog-text {
+    color: #e2e8f0 !important;
+}
+
+.dialog-button {
+    color: #3b82f6 !important;
+}
+
+.panel-left {
+    background: #1e293b !important;
+}
+
+.panel-left .user-area {
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15) !important;
+}
+
+.panel-left .user-area strong {
+    color: #e2e8f0 !important;
+}
+
+.panel-left .user-mail {
+    color: #94a3b8 !important;
+}
+
+.panel-left .item-title {
+    color: #e2e8f0 !important;
+}
+
+.panel-left .item-media i {
+    color: #94a3b8 !important;
+}
+
+.item-panel.active {
+    background: #2a3954 !important;
+    color: #3b82f6 !important;
+}
+
+.item-panel.active .item-title {
+    color: #3b82f6 !important;
+}
+
+.item-panel.active .item-media i {
+    color: #3b82f6 !important;
+}
+
+.horas-date-combo {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+.horas-date-display {
+    flex: 0 0 140px !important;
+    min-width: 0 !important;
+    text-align: center !important;
+    padding: 12px 4px !important;
+}
+
+.horas-date-row.block {
+    flex-wrap: nowrap !important;
+}
+
+.horas-date-combo {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 2px !important;
+    flex: 1 1 auto !important;
+}
+
+.horas-date-prev,
+
+.horas-date-next {
+    overflow: hidden !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.horas-chevron.horas-date-prev,
+.horas-chevron.horas-date-next {
+    flex: 0 0 48px !important;
+    width: 48px !important;
+    min-width: 48px !important;
+    padding: 4px !important;
+}
+
+.horas-date-prev .ripple-wave,
+.horas-date-next .ripple-wave {
+    display: none !important;
+}
+
+.horas-credits {
+    text-align: center;
+    color: var(--horas-muted);
+    font-size: 12px;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+.horas-credits p {
+    margin: 0;
+}
+
+.horas-chevron-prev .ripple-wave,
+.horas-chevron-next .ripple-wave {
+    display: none !important;
+}
+
+.horas-resumo-edit {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    background: #3b82f6;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+}
+
+.horas-resumo-edit .mdi {
+    font-size: 18px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.horas-resumo-edit:active {
+    filter: brightness(0.92);
+}
+
+.dialog button .ripple-wave {
+    display: none !important;
+}
